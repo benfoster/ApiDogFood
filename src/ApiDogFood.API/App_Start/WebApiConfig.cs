@@ -45,7 +45,7 @@ namespace ApiDogFood.API
 
             corsConfig
                 .ForAllOrigins()
-                .AllowAllMethods() // TODO AllowAllAvailableMethods
+                .AllowAllMethods()
                 .AllowAllRequestHeaders(); 
         }
 
