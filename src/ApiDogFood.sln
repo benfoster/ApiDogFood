@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDogFood.API", "ApiDogFood.API\ApiDogFood.API.csproj", "{6CBB302E-4FE0-4EAC-8D9E-1B6556FCC6C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDogFood.WebClient", "ApiDogFood.WebClient\ApiDogFood.WebClient.csproj", "{9468FA48-CB3F-41D3-B2F0-2FBC2D0B7E06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2E5BD126-209A-4AE0-9E06-962AA6868B58}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CBB302E-4FE0-4EAC-8D9E-1B6556FCC6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBB302E-4FE0-4EAC-8D9E-1B6556FCC6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBB302E-4FE0-4EAC-8D9E-1B6556FCC6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CBB302E-4FE0-4EAC-8D9E-1B6556FCC6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9468FA48-CB3F-41D3-B2F0-2FBC2D0B7E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9468FA48-CB3F-41D3-B2F0-2FBC2D0B7E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9468FA48-CB3F-41D3-B2F0-2FBC2D0B7E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9468FA48-CB3F-41D3-B2F0-2FBC2D0B7E06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

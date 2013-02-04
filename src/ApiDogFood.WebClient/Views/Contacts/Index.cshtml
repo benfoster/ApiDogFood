@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Contacts";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="error" style="display: none; color: red;">
+    <p>
+        It looks like your session has timed out. Click <a href="/users/logout">here</a> to log back in.
+    </p>
+</div>
+
+<p>
+    <button data-bind="click: refresh">Refresh</button>
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody data-bind="template: { name: displayMode, foreach: contacts }">
+    </tbody>
+</table>
+
+<h4>Add a new contact</h4>
+<form data-bind="with: newContact, submit: addContact">
+    <p>
+        <label>First Name</label>: <input type="text" data-bind="value: firstName" required/>
+    </p>
+    <p>
+        <label>Last Name</label>: <input type="text" data-bind="value: lastName" required/>
+    </p>
+    <p>
+        <label>Email</label>: <input type="email" data-bind="value: email" required/>
+    </p>
+    <button type="submit" data-bind="enable: isValid()">Add Contact</button>
+</form>
+
+<script type="text/html" id="tmplView">
+    <tr>
+        <td data-bind="text: firstName"></td>
+        <td data-bind="text: lastName"></td>
+        <td data-bind="text: email"></td>
+        <td>
+            <button type="submit" data-bind="click: $parent.updateContact">Update</button>
+            <button type="submit" data-bind="click: $parent.deleteContact">Delete</button>
+        </td>
+    </tr>
+</script>
+<script type="text/html" id="tmplEdit">
+    <tr>
+        <td><input type="text" data-bind="value: firstName" required/></td>
+        <td><input type="text" data-bind="value: lastName" required/></td>
+        <td data-bind="text: email"></td>
+        <td>
+            <button type="submit" data-bind="click: $parent.saveContact, enable: isValid()">Save</button>
+            <button type="submit" data-bind="click: $parent.cancelEdit">Cancel</button>
+        </td>
+    </tr>
+</script>
+
+@section scripts {
+    <script>
+        (function () {
+
+            var apiClient = new my.ApiClient({
+                baseUri: my.baseUri,
+                authToken: my.authToken,
+                onAuthFail: function () {
+                    $(".error").show();
+                }
+            });
+
+            var vm = new my.ContactsViewModel(apiClient);
+            ko.applyBindings(vm);
+            vm.refresh();
+        })();
+    </script>
+}
